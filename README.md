@@ -12,10 +12,10 @@ clipboard contents with the input.
 
 ```
 Usage:
-  $_ME [-pboard {general | ruler | find | font}] [-Prefer {txt | rtf | ps}]
-  $_ME <input> [-pboard {general | ruler | find | font}]
-  <command> | $_ME [-pboard {general | ruler | find | font}]
-  $_ME -h | --help
+  pb [-pboard {general | ruler | find | font}] [-Prefer {txt | rtf | ps}]
+  pb <input> [-pboard {general | ruler | find | font}]
+  <command> | pb [-pboard {general | ruler | find | font}]
+  pb -h | --help
 
 Options:
   -pboard    Specify the pasteboard to copy to or paste from.

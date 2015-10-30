@@ -14,7 +14,6 @@ clipboard contents with the input.
 Usage:
   pb [-pboard {general | ruler | find | font}] [-Prefer {txt | rtf | ps}]
   pb <input> [-pboard {general | ruler | find | font}]
-  <command> | pb [-pboard {general | ruler | find | font}]
   pb -h | --help
 
 Options:

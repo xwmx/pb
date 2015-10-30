@@ -66,7 +66,6 @@ A simple wrapper combining pbcopy & pbpaste in a single command.
 Usage:
   $_ME [-pboard {general | ruler | find | font}] [-Prefer {txt | rtf | ps}]
   $_ME <input> [-pboard {general | ruler | find | font}]
-  <command> | $_ME [-pboard {general | ruler | find | font}]
   $_ME -h | --help
 
 Options:

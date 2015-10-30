@@ -70,7 +70,13 @@ Usage:
   $_ME -h | --help
 
 Options:
+  -pboard    Specify the pasteboard to copy to or paste from.
+             Default: general
+  -Prefer    Specify what type of data to look for in the pasteboard first.
   -h --help  Show this screen.
+
+More information:
+  Run \`man pbcopy\` or \`man pbpaste\`.
 EOM
 
 # _print_help()

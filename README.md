@@ -6,3 +6,19 @@ prints the current contents of the clipboard to stdout using the `pbpaste`
 command. When input is passed via stdin or an argument, `pb` acts as a
 wrapper for `pbcopy`, which in the simplest case means that it replaces the
 clipboard contents with the input.
+
+## Usage
+
+```
+Usage:
+  $_ME [-pboard {general | ruler | find | font}] [-Prefer {txt | rtf | ps}]
+  $_ME <input> [-pboard {general | ruler | find | font}]
+  <command> | $_ME [-pboard {general | ruler | find | font}]
+  $_ME -h | --help
+
+Options:
+  -pboard    Specify the pasteboard to copy to or paste from.
+             Default: general
+  -Prefer    Specify what type of data to look for in the pasteboard first.
+  -h --help  Show this screen.
+```

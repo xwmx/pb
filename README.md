@@ -1,4 +1,5 @@
 # pb
+
 A tiny wrapper combining pbcopy &amp; pbpaste in a single command.
 
 Copy to or paste from the OS X clipboard/pasteboard. With no input, `pb`

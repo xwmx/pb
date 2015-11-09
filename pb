@@ -47,6 +47,9 @@ fi
 # Environment
 ###############################################################################
 
+# $_ME
+#
+# Set to this program's basename.
 _ME=$(basename "$0")
 
 # $_VERSION

@@ -49,6 +49,11 @@ fi
 
 _ME=$(basename "$0")
 
+# $_VERSION
+#
+# Manually set this to to current version of the program.
+_VERSION="1.0.0-alpha"
+
 ###############################################################################
 # Help
 ###############################################################################
@@ -63,6 +68,8 @@ read -r -d '' "_program_help" <<EOM || true
 
 A simple wrapper combining pbcopy & pbpaste in a single command.
 
+Version: $_VERSION
+
 Usage:
   $_ME [-pboard {general | ruler | find | font}] [-Prefer {txt | rtf | ps}]
   $_ME <input> [-pboard {general | ruler | find | font}]
@@ -73,6 +80,7 @@ Options:
              Default: general
   -Prefer    Specify what type of data to look for in the pasteboard first.
   -h --help  Show this screen.
+  --version  Print the current program version.
 
 More information:
   Run \`man pbcopy\` or \`man pbpaste\`.
@@ -85,6 +93,15 @@ EOM
 # Print the program help information.
 _print_help() {
   printf "%s\n" "$_program_help"
+}
+
+# _print_version()
+#
+# Usage: _print_help
+#
+# Print the current program version.
+_print_version() {
+  printf "%s\n" "$_VERSION"
 }
 
 ###############################################################################
@@ -145,8 +162,9 @@ _pb() {
 #   Entry point for the program, handling basic option parsing and dispatching.
 _main() {
   case "${1:-}" in
-    -h|--help)  _print_help ;;
-    *)          _pb "$@"    ;;
+    -h|--help)  _print_help     ;;
+    --version)  _print_version  ;;
+    *)          _pb "$@"        ;;
   esac
 }
 

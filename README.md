@@ -8,6 +8,28 @@ command. When input is passed via stdin or an argument, `pb` acts as a
 wrapper for `pbcopy`, which in the simplest case means that it replaces the
 clipboard contents with the input.
 
+## Installation
+
+### Homebrew
+
+To install with [Homebrew](http://brew.sh/):
+
+  brew install alphabetum/taps/pb
+
+### bpkg
+
+To install with [bpkg](http://www.bpkg.io/):
+
+    bpkg install alphabetum/pb
+
+### Manual
+
+To install manually, simply add the `pb` script to your `$PATH`. If
+you already have a `~/bin` directory, you can use the following command:
+
+    curl -L https://raw.github.com/alphabetum/pb/master/pb \
+      -o ~/bin/pb && chmod +x ~/bin/pb
+
 ## Usage
 
 ```

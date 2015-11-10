@@ -1,4 +1,4 @@
-```
+```text
            __
     ____  / /_
    / __ \/ __ \
@@ -23,25 +23,31 @@ clipboard contents with the input.
 
 To install with [Homebrew](http://brew.sh/):
 
-  brew install alphabetum/taps/pb
+```bash
+brew install alphabetum/taps/pb
+```
 
 ### bpkg
 
 To install with [bpkg](http://www.bpkg.io/):
 
-    bpkg install alphabetum/pb
+```bash
+bpkg install alphabetum/pb
+```
 
 ### Manual
 
 To install manually, simply add the `pb` script to your `$PATH`. If
 you already have a `~/bin` directory, you can use the following command:
 
-    curl -L https://raw.github.com/alphabetum/pb/master/pb \
-      -o ~/bin/pb && chmod +x ~/bin/pb
+```bash
+curl -L https://raw.github.com/alphabetum/pb/master/pb \
+  -o ~/bin/pb && chmod +x ~/bin/pb
+```
 
 ## Usage
 
-```
+```text
 Usage:
   pb [-pboard {general | ruler | find | font}] [-Prefer {txt | rtf | ps}]
   pb <input> [-pboard {general | ruler | find | font}]

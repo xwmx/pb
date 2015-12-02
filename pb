@@ -76,14 +76,15 @@ Version: $_VERSION
 Usage:
   $_ME [-pboard {general | ruler | find | font}] [-Prefer {txt | rtf | ps}]
   $_ME <input> [-pboard {general | ruler | find | font}]
+  $_ME --version
   $_ME -h | --help
 
 Options:
   -pboard    Specify the pasteboard to copy to or paste from.
              Default: general
   -Prefer    Specify what type of data to look for in the pasteboard first.
-  -h --help  Show this screen.
   --version  Print the current program version.
+  -h --help  Show this screen.
 
 More information:
   Run \`man pbcopy\` or \`man pbpaste\`.

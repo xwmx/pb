@@ -51,11 +51,13 @@ curl -L https://raw.github.com/alphabetum/pb/master/pb \
 Usage:
   pb [-pboard {general | ruler | find | font}] [-Prefer {txt | rtf | ps}]
   pb <input> [-pboard {general | ruler | find | font}]
+  pb --version
   pb -h | --help
 
 Options:
   -pboard    Specify the pasteboard to copy to or paste from.
              Default: general
   -Prefer    Specify what type of data to look for in the pasteboard first.
+  --version  Print the current program version.
   -h --help  Show this screen.
 ```

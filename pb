@@ -61,7 +61,13 @@ _VERSION="1.0.1"
 # Help
 ###############################################################################
 
-read -r -d '' "_program_help" <<EOM || true
+# _print_help()
+#
+# Usage: _print_help
+#
+# Print the program help information.
+_print_help() {
+  cat <<HEREDOC
            __
     ____  / /_
    / __ \/ __ \\
@@ -88,15 +94,7 @@ Options:
 
 More information:
   Run \`man pbcopy\` or \`man pbpaste\`.
-EOM
-
-# _print_help()
-#
-# Usage: _print_help
-#
-# Print the program help information.
-_print_help() {
-  printf "%s\n" "$_program_help"
+HEREDOC
 }
 
 # _print_version()

@@ -23,6 +23,17 @@ export _HELP_HEADER
   [[ $(IFS=$'\n'; echo "${lines[*]:0:6}") == "$_HELP_HEADER" ]]
 }
 
+@test "\`pb --version\` returns with 0 status." {
+  run "$_PB" --version
+  [[ "$status" -eq 0 ]]
+}
+
+@test "\`pb --version\` prints a version number." {
+  run "$_PB" --version
+  printf "'%s'" "$output"
+  echo "$output" | grep -q '\d\+\.\d\+\.\d\+'
+}
+
 @test "\`pb\` returns with 0 status." {
   run "$_PB"
   [[ "$status" -eq 0 ]]

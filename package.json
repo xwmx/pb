@@ -1,6 +1,6 @@
 {
   "name": "pb",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple wrapper combining pbcopy & pbpaste in a single command.",
   "global": true,
   "install": "make install"

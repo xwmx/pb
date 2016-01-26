@@ -29,15 +29,15 @@ IFS=$'\n\t'
 # Returns:
 #   0  If the command exists in the current environment.
 #   1  If not.
-command_exists() {
+_command_exists() {
   hash "$1" 2>/dev/null
 }
 
-if ! command_exists "pbcopy"
+if ! _command_exists "pbcopy"
 then
   printf "pbcopy not found on this system.\n"
   exit 1
-elif ! command_exists "pbpaste"
+elif ! _command_exists "pbpaste"
 then
   printf "pbpaste not found on this system.\n"
   exit 1

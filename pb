@@ -30,7 +30,7 @@ IFS=$'\n\t'
 #   0  If the command exists in the current environment.
 #   1  If not.
 _command_exists() {
-  hash "$1" 2>/dev/null
+  hash "${1}" 2>/dev/null
 }
 
 if ! _command_exists "pbcopy"
@@ -50,7 +50,7 @@ fi
 # $_ME
 #
 # Set to this program's basename.
-_ME=$(basename "$0")
+_ME=$(basename "${0}")
 
 # $_VERSION
 #
@@ -77,13 +77,13 @@ _print_help() {
 
 A simple wrapper combining pbcopy & pbpaste in a single command.
 
-Version: $_VERSION
+Version: ${_VERSION}
 
 Usage:
-  $_ME [-pboard {general | ruler | find | font}] [-Prefer {txt | rtf | ps}]
-  $_ME <input> [-pboard {general | ruler | find | font}]
-  $_ME --version
-  $_ME -h | --help
+  ${_ME} [-pboard {general | ruler | find | font}] [-Prefer {txt | rtf | ps}]
+  ${_ME} <input> [-pboard {general | ruler | find | font}]
+  ${_ME} --version
+  ${_ME} -h | --help
 
 Options:
   -pboard    Specify the pasteboard to copy to or paste from.
@@ -103,7 +103,7 @@ HEREDOC
 #
 # Print the current program version.
 _print_version() {
-  printf "%s\n" "$_VERSION"
+  printf "%s\n" "${_VERSION}"
 }
 
 ###############################################################################
@@ -140,14 +140,14 @@ _pb() {
   then
     if [[ -n "${1:-}" ]] && [[ ! "${1:-}" =~ ^-.* ]]
     then
-      local _input="$1"
+      local _input="${1}"
       local _options=(${@:1})
-      printf "%s" "$_input" | pbcopy "${_options:-}"
+      printf "%s" "${_input}" | pbcopy "${_options:-}"
     else
-      pbpaste "$@"
+      pbpaste "${@}"
     fi
   else
-    cat | pbcopy "$@"
+    cat | pbcopy "${@}"
   fi
 }
 
@@ -166,9 +166,9 @@ _main() {
   case "${1:-}" in
     -h|--help)  _print_help     ;;
     --version)  _print_version  ;;
-    *)          _pb "$@"        ;;
+    *)          _pb "${@}"      ;;
   esac
 }
 
 # Call `_main` after everything has been defined.
-_main "$@"
+_main "${@}"

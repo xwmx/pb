@@ -171,4 +171,4 @@ _main() {
 }
 
 # Call `_main` after everything has been defined.
-_main "${@}"
+_main "${@:-}"

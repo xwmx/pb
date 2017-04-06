@@ -63,7 +63,7 @@ Options:
 
 Examples:
   \`pb "Example text."\`         Copy data specied with an argument.
-  \`echo "Example text." | pb\`  Copy piped date.
+  \`echo "Example text." | pb\`  Copy piped data.
   \`pb\`                         Print contents of the clipboard/pasteboard.
 
 More information:

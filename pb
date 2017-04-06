@@ -92,6 +92,11 @@ Options:
   --version  Print the current program version.
   -h --help  Show this screen.
 
+Examples:
+  \`pb "Example text."\`         Copy data specied with an argument.
+  \`echo "Example text." | pb\`  Copy piped date.
+  \`pb\`                         Print contents of the clipboard/pasteboard.
+
 More information:
   Run \`man pbcopy\` or \`man pbpaste\`.
 HEREDOC

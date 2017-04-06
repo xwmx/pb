@@ -69,3 +69,8 @@ Examples:
 More information:
   Run \`man pbcopy\` or \`man pbpaste\`.
 ```
+
+## Tests
+
+To run the test suite, install [Bats](https://github.com/sstephenson/bats) and
+run `bats test` in the project root.

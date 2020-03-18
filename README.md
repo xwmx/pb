@@ -24,7 +24,7 @@ clipboard contents with the input.
 To install with [Homebrew](http://brew.sh/):
 
 ```bash
-brew install alphabetum/taps/pb
+brew install xwmx/taps/pb
 ```
 
 ### bpkg
@@ -32,7 +32,7 @@ brew install alphabetum/taps/pb
 To install with [bpkg](http://www.bpkg.io/):
 
 ```bash
-bpkg install alphabetum/pb
+bpkg install xwmx/pb
 ```
 
 ### Manual
@@ -41,7 +41,7 @@ To install manually, simply add the `pb` script to your `$PATH`. If
 you already have a `~/bin` directory, you can use the following command:
 
 ```bash
-curl -L https://raw.github.com/alphabetum/pb/master/pb \
+curl -L https://raw.github.com/xwmx/pb/master/pb \
   -o ~/bin/pb && chmod +x ~/bin/pb
 ```
 

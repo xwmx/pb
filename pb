@@ -8,7 +8,7 @@
 #
 # A simple wrapper combining pbcopy & pbpaste in a single command.
 #
-# Based on Bash Boilerplate: https://github.com/alphabetum/bash-boilerplate
+# Based on Bash Boilerplate: https://github.com/xwmx/bash-boilerplate
 #
 # Copyright (c) 2015 William Melody • hi@williammelody.com
 

@@ -8,6 +8,8 @@
 #
 # A simple wrapper combining pbcopy & pbpaste in a single command.
 #
+# https://github.com/xwmx/pb
+#
 # Based on Bash Boilerplate: https://github.com/xwmx/bash-boilerplate
 #
 # Copyright (c) 2015 William Melody • hi@williammelody.com
@@ -99,6 +101,9 @@ Examples:
 
 More information:
   Run \`man pbcopy\` or \`man pbpaste\`.
+
+Home:
+  https://github.com/xwmx/pb
 HEREDOC
 }
 

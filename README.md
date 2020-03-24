@@ -27,6 +27,14 @@ To install with [Homebrew](http://brew.sh/):
 brew install xwmx/taps/pb
 ```
 
+### npm
+
+To install with [npm](https://www.npmjs.com/package/pb.sh):
+
+```bash
+npm install --global pb.sh
+```
+
 ### bpkg
 
 To install with [bpkg](http://www.bpkg.io/):

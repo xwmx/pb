@@ -17,6 +17,8 @@ command. When input is passed via stdin or an argument, `pb` acts as a
 wrapper for `pbcopy`, which in the simplest case means that it replaces the
 clipboard contents with the input.
 
+[![Build Status](https://travis-ci.org/xwmx/pb.svg?branch=master)](https://travis-ci.org/xwmx/pb)
+
 ## Installation
 
 ### Homebrew

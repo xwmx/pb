@@ -72,9 +72,9 @@ Options:
   -h --help  Show this screen.
 
 Examples:
-  `pb "Example text."`         Copy data specied with an argument.
-  `echo "Example text." | pb`  Copy piped data.
-  `pb`                         Print contents of the clipboard/pasteboard.
+  pb "Example text."          Copy data specied with an argument.
+  echo "Example text." | pb   Copy piped data.
+  pb                          Print contents of the clipboard / pasteboard.
 
 More information:
   Run `man pbcopy` or `man pbpaste`.

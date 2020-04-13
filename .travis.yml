@@ -1,4 +1,5 @@
 before_install:
   - brew install bats-core
+os: osx
 osx_image: xcode11.3
 script: bats test

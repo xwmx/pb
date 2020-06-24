@@ -46,6 +46,22 @@ then
 fi
 
 ###############################################################################
+# Utility Functions
+###############################################################################
+
+# _interactive_input()
+#
+# Usage:
+#   _interactive_input
+#
+# Returns:
+#   0  If the current input is interactive (eg, a shell).
+#   1  If the current input is stdin / piped input.
+_interactive_input() {
+  [[ -t 0 ]]
+}
+
+###############################################################################
 # Environment
 ###############################################################################
 
@@ -82,10 +98,12 @@ A simple wrapper combining pbcopy & pbpaste in a single command.
 Usage:
   ${_ME} [-pboard {general | ruler | find | font}] [-Prefer {txt | rtf | ps}]
   ${_ME} <input> [-pboard {general | ruler | find | font}]
+  ${_ME} --clear
   ${_ME} --version
   ${_ME} -h | --help
 
 Options:
+  --clear    Clear the contents of all pasteboards.
   -pboard    Specify the pasteboard to copy to or paste from.
              Default: general
   -Prefer    Specify what type of data to look for in the pasteboard first.
@@ -118,16 +136,18 @@ _print_version() {
 # Program Functions
 ###############################################################################
 
-# _interactive_input()
+# _clear_pasteboards()
 #
 # Usage:
-#   _interactive_input
+#   _clear_pasteboards
 #
-# Returns:
-#   0  If the current input is interactive (eg, a shell).
-#   1  If the current input is stdin / piped input.
-_interactive_input() {
-  [[ -t 0 ]]
+# Description:
+#   Erase the contents of each clipboard.
+_clear_pasteboards() {
+  for __pasteboard in "general" "ruler" "find" "font"
+  do
+    printf "" | pbcopy -pboard "${__pasteboard}"
+  done
 }
 
 # _pb()
@@ -173,9 +193,10 @@ _pb() {
 #   Entry point for the program, handling basic option parsing and dispatching.
 _main() {
   case "${1:-}" in
-    -h|--help)  _print_help     ;;
-    --version)  _print_version  ;;
-    *)          _pb "${@}"      ;;
+    -clear|--clear)     _clear_pasteboards  ;;
+    -h|-help|--help)    _print_help         ;;
+    -version|--version) _print_version      ;;
+    *)                  _pb "${@}"          ;;
   esac
 }
 

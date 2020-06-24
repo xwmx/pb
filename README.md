@@ -61,10 +61,12 @@ curl -L https://raw.github.com/xwmx/pb/master/pb \
 Usage:
   pb [-pboard {general | ruler | find | font}] [-Prefer {txt | rtf | ps}]
   pb <input> [-pboard {general | ruler | find | font}]
+  pb --clear
   pb --version
   pb -h | --help
 
 Options:
+  --clear    Clear the contents of all pasteboards.
   -pboard    Specify the pasteboard to copy to or paste from.
              Default: general
   -Prefer    Specify what type of data to look for in the pasteboard first.

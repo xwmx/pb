@@ -61,3 +61,50 @@ export _HELP_HEADER
   _compare "piped test string" "${output}"
   [[ "${output}" == "piped test string" ]]
 }
+
+@test "\`pb -pboard\` saves and prints from specified pasteboards\`." {
+  echo "piped test string to general"   | "${_PB}" -pboard "general"
+  echo "piped test string to ruler"     | "${_PB}" -pboard "ruler"
+  echo "piped test string to find"      | "${_PB}" -pboard "find"
+  echo "piped test string to font"      | "${_PB}" -pboard "font"
+
+  run "${_PB}"
+  [[ "${output}" == "piped test string to general" ]]
+
+  run "${_PB}" -pboard "general"
+  [[ "${output}" == "piped test string to general" ]]
+
+  run "${_PB}" -pboard "ruler"
+  [[ "${output}" == "piped test string to ruler" ]]
+
+  run "${_PB}" -pboard "find"
+  [[ "${output}" == "piped test string to find" ]]
+
+  run "${_PB}" -pboard "font"
+  [[ "${output}" == "piped test string to font" ]]
+}
+
+@test "\`pb --clear\` clears the clipboard contents\`." {
+  echo "piped test string to general"   | "${_PB}" -pboard "general"
+  echo "piped test string to ruler"     | "${_PB}" -pboard "ruler"
+  echo "piped test string to find"      | "${_PB}" -pboard "find"
+  echo "piped test string to font"      | "${_PB}" -pboard "font"
+
+  run "${_PB}" --clear
+
+  run "${_PB}"
+  [[ -z "${output}" ]]
+
+  run "${_PB}" -pboard "general"
+  [[ -z "${output}" ]]
+
+  run "${_PB}" -pboard "ruler"
+  [[ -z "${output}" ]]
+
+
+  run "${_PB}" -pboard "find"
+  [[ -z "${output}" ]]
+
+  run "${_PB}" -pboard "font"
+  [[ -z "${output}" ]]
+}

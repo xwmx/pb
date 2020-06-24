@@ -148,6 +148,8 @@ _clear_pasteboards() {
   do
     printf "" | pbcopy -pboard "${__pasteboard}"
   done
+
+  printf "Pasteboards / Clipboard cleared.\\n" 1>&2
 }
 
 # _pb()

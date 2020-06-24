@@ -19,6 +19,26 @@ command. When input is passed via stdin or an argument, `pb` acts as a
 wrapper for `pbcopy`, which in the simplest case means that it replaces the
 clipboard contents with the input.
 
+```bash
+# save the string "Example text." to the clipboard
+> pb "Example text."
+
+# print the clipboard contents
+> pb
+Example text.
+
+# save the string "Example piped text." to the clipboard
+> echo "Example piped text." | pb
+
+# print the clipboard contents
+> pb
+Example piped text.
+
+# clear the clipboard contents
+> pb --clear
+Pasteboards / Clipboard cleared.
+```
+
 ## Installation
 
 ### Homebrew

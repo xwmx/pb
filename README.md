@@ -34,7 +34,7 @@ brew install xwmx/taps/pb
 To install with [npm](https://www.npmjs.com/package/pb.sh):
 
 ```bash
-npm install --global pb.sh
+npm install -g pb.sh
 ```
 
 ### bpkg

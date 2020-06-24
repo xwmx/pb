@@ -13,13 +13,13 @@ export _HELP_HEADER
 
 @test "\`pb -h\` prints default help." {
   run "${_PB}" -h
-  _compare "${_HELP_HEADER}" $(IFS=$'\n'; echo "${lines[*]:0:6}")
+  _compare "${_HELP_HEADER}" "$(IFS=$'\n'; echo "${lines[*]:0:6}")"
   [[ $(IFS=$'\n'; echo "${lines[*]:0:6}") == "${_HELP_HEADER}" ]]
 }
 
 @test "\`pb --help\` prints default help." {
   run "${_PB}" --help
-  _compare "${_HELP_HEADER}" $(IFS=$'\n'; echo "${lines[*]:0:6}")
+  _compare "${_HELP_HEADER}" "$(IFS=$'\n'; echo "${lines[*]:0:6}")"
   [[ $(IFS=$'\n'; echo "${lines[*]:0:6}") == "${_HELP_HEADER}" ]]
 }
 

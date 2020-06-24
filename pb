@@ -149,6 +149,7 @@ _pb() {
     if [[ -n "${1:-}" ]] && [[ ! "${1:-}" =~ ^-.* ]]
     then
       local _input="${1}"
+      # shellcheck disable=SC2206
       local _options=(${@:1})
       printf "%s" "${_input}" | pbcopy "${_options:-}"
     else

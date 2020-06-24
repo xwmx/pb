@@ -13,10 +13,10 @@
 
 A tiny wrapper combining `pbcopy` &amp; `pbpaste` in a single command.
 
-Copy to or paste from the macOS / OS X clipboard/pasteboard. With no input,
-`pb` prints the current contents of the clipboard to stdout using the `pbpaste`
-command. When input is passed via stdin or an argument, `pb` acts as a
-wrapper for `pbcopy`, which in the simplest case means that it replaces the
+Copy to or paste from the macOS / OS X clipboard / pasteboards. With no
+input, `pb` prints the current contents of the clipboard to stdout using the
+`pbpaste` command. When input is passed via stdin or an argument, `pb` acts as
+a wrapper for `pbcopy`, which in the simplest case means that it replaces the
 clipboard contents with the input. `pb` also includes a `pb --clear` flag
 to easily clear the macOS clipboard.
 
@@ -102,6 +102,21 @@ Examples:
 More information:
   Run `man pbcopy` or `man pbpaste`.
 ```
+
+## Background and Terminology
+
+macOS refers to the clipboard as the pasteboard. There are multiple
+pasteboards, with "general" as the default that is used when no
+pasteboard is specified. The "general" pasteboard is also used in
+[Universal Clipboard](https://support.apple.com/en-us/HT209460).
+
+Clipboard / Pasteboard Developer Documentation:
+- [Pasteboard | Apple Developer Documentation Archive
+  ](https://developer.apple.com/library/archive/documentation/General/Devpedia-CocoaApp-MOSX/Pasteboard.html)
+- [NSPasteboard | Apple Developer Documentation
+  ](https://developer.apple.com/documentation/appkit/nspasteboard#//apple_ref/doc/c_ref/NSPasteboard)
+- [NSPasteboardName | Apple Developer Documentation
+  ](https://developer.apple.com/documentation/appkit/nspasteboardname)
 
 ## Tests
 

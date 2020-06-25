@@ -95,7 +95,7 @@ _ME=$(basename "${0}")
 # $_VERSION
 #
 # Manually set this to to current version of the program.
-_VERSION="1.2.0"
+_VERSION="1.2.1"
 
 ###############################################################################
 # Help

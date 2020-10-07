@@ -47,7 +47,8 @@ Pasteboards / Clipboard cleared.
 To install with [Homebrew](http://brew.sh/):
 
 ```bash
-brew install xwmx/taps/pb
+brew tap xwmx/taps
+brew install pb
 ```
 
 ### npm

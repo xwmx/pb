@@ -57,6 +57,7 @@ jobs:
       - name: "Setup"
         run: |
           brew update
+          brew install bats-core
           brew install expect
       - name: "Set $TERM=xterm"
         run:  printf "TERM=xterm\\n" >> $GITHUB_ENV

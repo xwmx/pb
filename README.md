@@ -1,4 +1,4 @@
-<a href="https://github.com/xwmx/nb/actions" rel="nofollow">
+<a href="https://github.com/xwmx/pb/actions" rel="nofollow">
   <img  src="https://img.shields.io/github/actions/workflow/status/xwmx/pb/tests.yml?branch=master"
         alt="Build Status"
         style="max-width:100%;">

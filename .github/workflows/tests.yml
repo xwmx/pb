@@ -44,8 +44,8 @@ name: "pb · Test Suite"
 on:
   pull_request:
     branches: [ master ]
-  # push:
-  #   branches: [ master ]
+  push:
+    branches: [ master ]
   workflow_dispatch:
 
 jobs:
@@ -54,6 +54,10 @@ jobs:
     runs-on: macos-11.0
     steps:
       - uses: actions/checkout@v3
+      - name: "Setup"
+        run: |
+          brew update
+          brew install expect
       - name: "Set $TERM=xterm"
         run:  printf "TERM=xterm\\n" >> $GITHUB_ENV
       - name: "Run bats tests"

@@ -1,4 +1,8 @@
-[![Build Status](https://travis-ci.org/xwmx/pb.svg?branch=master)](https://travis-ci.org/xwmx/pb)
+<a href="https://github.com/xwmx/nb/actions" rel="nofollow">
+  <img  src="https://img.shields.io/github/actions/workflow/status/xwmx/pb/tests.yml?branch=master"
+        alt="Build Status"
+        style="max-width:100%;">
+</a>
 
 ```text
            __

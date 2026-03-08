@@ -199,42 +199,71 @@ _preview() {
 #   wrapper for `pbcopy`, which in the simplest case means that it replaces the
 #   clipboard contents with the input.
 _pb() {
+  local _input=
+  local _options=()
+  local _pboard=
+  local _prefer=
+  local _preview=0
+
+  while ((${#}))
+  do
+    case "${1:-}" in
+      -clear|--clear)
+        _clear_pasteboards
+
+        exit 0
+        ;;
+      -h|-help|--help)
+        _print_help
+
+        exit 0
+        ;;
+      -pboard|-Prefer)
+        if [[ -n "${2:-}" ]]
+        then
+          _options+=("${1}" "${2}")
+
+          shift
+        else
+          _input="${_input:-}${1:-}"
+        fi
+        ;;
+      -p|--preview)
+        _preview=1
+        ;;
+      -version|--version)
+        _print_version
+
+        exit 0
+        ;;
+      *)
+        _input="${1:-}"
+        ;;
+    esac
+
+    shift
+  done
+
   if _interactive_input
   then
-    if [[ -n "${1:-}" ]] && [[ ! "${1:-}" =~ ^-.* ]]
+    if [[ -n "${_input:-}" ]]
     then
-      local _input="${1}"
-      # shellcheck disable=SC2206
-      local _options=(${@:1})
-      printf "%s" "${_input}" | pbcopy "${_options:-}"
+      printf "%s" "${_input}" | pbcopy "${_options[@]:-}"
     else
-      pbpaste "${@}"
+      {
+        pbpaste "${_options[@]:-}"
+      } | {
+        if ((_preview))
+        then
+          cat | "${PAGER:-less}"
+        else
+          cat
+        fi
+      }
     fi
   else
-    cat | pbcopy "${@}"
+    cat | pbcopy "${_options[@]:-}"
   fi
 }
 
-###############################################################################
-# Main
-###############################################################################
-
-# _main()
-#
-# Usage:
-#   _main [<options>] [<arguments>]
-#
-# Description:
-#   Entry point for the program, handling basic option parsing and dispatching.
-_main() {
-  case "${1:-}" in
-    -clear|--clear)     _clear_pasteboards  ;;
-    -h|-help|--help)    _print_help         ;;
-    -p|--preview)       _preview            ;;
-    -version|--version) _print_version      ;;
-    *)                  _pb "${@}"          ;;
-  esac
-}
-
-# Call `_main` after everything has been defined.
-_main "${@:-}"
+_pb "${@:-}"

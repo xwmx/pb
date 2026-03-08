@@ -63,15 +63,28 @@ export _HELP_HEADER
 }
 
 @test "\`pb -pboard\` saves and prints from specified pasteboards\`." {
-  echo "piped test string to general"   | "${_PB}" -pboard "general"
-  echo "piped test string to ruler"     | "${_PB}" -pboard "ruler"
-  echo "piped test string to find"      | "${_PB}" -pboard "find"
-  echo "piped test string to font"      | "${_PB}" -pboard "font"
+  {
+    echo "piped test string to general" | "${_PB}" -pboard "general"
+    echo "piped test string to ruler"   | "${_PB}" -pboard "ruler"
+    echo "piped test string to find"    | "${_PB}" -pboard "find"
+    echo "piped test string to font"    | "${_PB}" -pboard "font"
+  }
 
   run "${_PB}"
+
+  echo "general:  '$("${_PB}" -pboard "general")'"
+  echo "ruler:    '$("${_PB}" -pboard "ruler")'"
+  echo "find:     '$("${_PB}" -pboard "find")'"
+  echo "font:     '$("${_PB}" -pboard "font")'"
+
+  echo "\$output: '${output}'"
+
   [[ "${output}" == "piped test string to general" ]]
 
   run "${_PB}" -pboard "general"
+
+  echo "\$output: '${output}'"
+
   [[ "${output}" == "piped test string to general" ]]
 
   run "${_PB}" -pboard "ruler"

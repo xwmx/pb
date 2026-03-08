@@ -119,23 +119,27 @@ A simple wrapper combining pbcopy & pbpaste in a single command.
 
 Usage:
   ${_ME} [-pboard {general | ruler | find | font}] [-Prefer {txt | rtf | ps}]
+         [-p | --preview]
   ${_ME} <input> [-pboard {general | ruler | find | font}]
   ${_ME} --clear
   ${_ME} --version
   ${_ME} -h | --help
 
 Options:
-  --clear    Clear the contents of all pasteboards.
-  -pboard    Specify the pasteboard to copy to or paste from.
-             Default: general
-  -Prefer    Specify what type of data to look for in the pasteboard first.
-  --version  Print the current program version.
-  -h --help  Show this screen.
+  --clear        Clear the contents of all pasteboards.
+  -pboard        Specify the pasteboard to copy to or paste from.
+                 Default: general
+  -Prefer        Specify what type of data to look for in the pasteboard first.
+  -p, --preview  Display pasteboard content in \$PAGER, or \`less\` if unset.
+  --version      Print the current program version.
+  -h --help      Show this screen.
 
 Examples:
   pb "Example text."         Copy data specied with an argument.
   echo "Example text." | pb  Copy piped data.
   pb                         Print contents of the clipboard / pasteboard.
+  pb -pboard find            Print contents of the "find" pasteboard.
+  pb --preview               Display the contents of the pasteboard in a pager.
 
 More information:
   Run \`man pbcopy\` or \`man pbpaste\`.

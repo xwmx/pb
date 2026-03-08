@@ -120,7 +120,7 @@ A simple wrapper combining pbcopy & pbpaste in a single command.
 
 Usage:
   ${_ME} [-pboard {general | ruler | find | font}] [-Prefer {txt | rtf | ps}]
-         [-p | --preview]
+     [-p | --preview]
   ${_ME} <input> [-pboard {general | ruler | find | font}]
   ${_ME} --clear
   ${_ME} --version

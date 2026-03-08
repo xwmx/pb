@@ -88,7 +88,7 @@ A simple wrapper combining pbcopy & pbpaste in a single command.
 
 Usage:
   pb [-pboard {general | ruler | find | font}] [-Prefer {txt | rtf | ps}]
-         [-p | --preview]
+     [-p | --preview]
   pb <input> [-pboard {general | ruler | find | font}]
   pb --clear
   pb --version

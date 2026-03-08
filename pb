@@ -174,6 +174,17 @@ _clear_pasteboards() {
   printf "Pasteboards / Clipboard cleared.\\n" 1>&2
 }
 
+# _preview()
+#
+# Usage:
+#   _preview
+#
+# Description:
+#   Display a preview of the clipboard/pasteboard contents in PAGER.
+_preview() {
+  _pb | "${PAGER:-less}"
+}
+
 # _pb()
 #
 # Usage:
@@ -219,6 +230,7 @@ _main() {
   case "${1:-}" in
     -clear|--clear)     _clear_pasteboards  ;;
     -h|-help|--help)    _print_help         ;;
+    -p|--preview)       _preview            ;;
     -version|--version) _print_version      ;;
     *)                  _pb "${@}"          ;;
   esac

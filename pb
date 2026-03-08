@@ -107,7 +107,8 @@ _VERSION="1.2.2"
 #
 # Print the program help information.
 _print_help() {
-  cat <<HEREDOC
+  {
+    cat <<HEREDOC
            __
     ____  / /_
    / __ \/ __ \\
@@ -147,6 +148,14 @@ More information:
 Home:
   https://github.com/xwmx/pb
 HEREDOC
+  } | {
+    if [[ -n "${PAGER:-}" ]] && [[ ! "${PAGER:-}" =~ ^less ]]
+    then
+      "${PAGER:-}"
+    else
+      less -F
+    fi
+  }
 }
 
 # _print_version()

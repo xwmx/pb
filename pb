@@ -229,7 +229,7 @@ _pb() {
 
         exit 0
         ;;
-      -pboard|-Prefer)
+      -pboard|--pboard|-Prefer|--Prefer|-prefer|--prefer)
         if [[ -n "${2:-}" ]]
         then
           _options+=("${1}" "${2}")

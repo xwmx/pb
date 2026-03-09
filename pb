@@ -214,8 +214,6 @@ _preview() {
 _pb() {
   local _input=
   local _options=()
-  local _pboard=
-  local _prefer=
   local _preview=0
 
   while ((${#}))

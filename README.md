@@ -15,10 +15,10 @@
 
 # pb
 
-A tiny wrapper combining `pbcopy` &amp; `pbpaste` in a single command.
+A tiny wrapper combining `pbcopy` &amp; `pbpaste` in a single command. Copy to
+or paste from the macOS / OS X clipboard / pasteboards.
 
-Copy to or paste from the macOS / OS X clipboard / pasteboards. With no
-input, `pb` prints the current contents of the clipboard to stdout using the
+With no input, `pb` prints the current contents of the clipboard to stdout using the
 `pbpaste` command. When input is passed via stdin or an argument, `pb` acts as
 a wrapper for `pbcopy`, which in the simplest case means that it replaces the
 clipboard contents with the input.
@@ -51,7 +51,22 @@ pb --preview
 pb -p
 ```
 
+macOS has multiple pasteboards, with "general" as the default that is used
+when no pasteboard is specified. The "general" pasteboard is also used in
+[Universal Clipboard](https://support.apple.com/en-us/HT209460). Other
+pasteboards can be accessed with `pb -pboard <name>`. The other
+available pasteboards are `ruler`, `find`, and `font`.
 
+```bash
+# save the string "example" to the "find" pasteboard
+pb -pboard find "example"
+
+# print the contents of the "find" pasteboard
+pb -pboard find
+
+# preview the contents of the "find" pasteboard
+pb -pboard find --preview
+```
 
 `pb` also includes a `pb --clear` flag to easily clear the macOS clipboard.
 
@@ -60,6 +75,9 @@ pb -p
 > pb --clear
 Pasteboards / Clipboard cleared.
 ```
+
+macOS refers to the clipboard as the pasteboard. The terms are largely
+synonymous can be used interchangably.
 
 ## Installation
 
@@ -134,12 +152,8 @@ Home:
   https://github.com/xwmx/pb
 ```
 
-## Background and Terminology
+## Resources
 
-macOS refers to the clipboard as the pasteboard. There are multiple
-pasteboards, with "general" as the default that is used when no
-pasteboard is specified. The "general" pasteboard is also used in
-[Universal Clipboard](https://support.apple.com/en-us/HT209460).
 
 Clipboard / Pasteboard Developer Documentation:
 - [Pasteboard | Apple Developer Documentation Archive

@@ -21,8 +21,7 @@ Copy to or paste from the macOS / OS X clipboard / pasteboards. With no
 input, `pb` prints the current contents of the clipboard to stdout using the
 `pbpaste` command. When input is passed via stdin or an argument, `pb` acts as
 a wrapper for `pbcopy`, which in the simplest case means that it replaces the
-clipboard contents with the input. `pb` also includes a `pb --clear` flag
-to easily clear the macOS clipboard.
+clipboard contents with the input.
 
 ```bash
 # save the string "Example text." to the clipboard
@@ -38,7 +37,25 @@ Example text.
 # print the clipboard contents
 > pb
 Example piped text.
+```
 
+The contents of the pasteboards can be previewed in a pager with `pb -p`
+/ `pb --preview`. The content will be displayed in the command set in
+the `$PAGER` environment variable, or `less` if `$PAGER` is unset.
+
+```bash
+# display the contents of the clipboard in a pager
+pb --preview
+
+# display the contents of the clipboard in a pager, short option
+pb -p
+```
+
+
+
+`pb` also includes a `pb --clear` flag to easily clear the macOS clipboard.
+
+```bash
 # clear the clipboard contents
 > pb --clear
 Pasteboards / Clipboard cleared.
